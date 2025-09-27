@@ -26,8 +26,8 @@ class PX4CompanionNode(Node):
         # Declare and get parameters
         self.declare_parameter("use_keyboard", False)
         self.declare_parameter("detect_mode", False)
-        self.pid_x = PID(0.001, 0.00001, 0.000001, setpoint=self._image_width / 4)
-        self.pid_y = PID(0.001, 0.00001, 0.000001, setpoint=self._image_height / 4)
+        self.pid_x = PID(1.0, 0.00001, 0.000001, setpoint=self._image_width / 4)
+        self.pid_y = PID(1.0, 0.00001, 0.000001, setpoint=self._image_height / 4)
         self.pid_x.output_limits = (-1, 1)
         self.pid_y.output_limits = (-1, 1)
 

@@ -39,7 +39,7 @@ class OpticalFlowNode(Node):
             qos.qos_profile_sensor_data,
         )
         self._img = None
-        self._timer = self.create_timer(1, self._timer_callback)
+        self._timer = self.create_timer(0.1, self._timer_callback)
 
     def _timer_callback(self):
         self._model_inference(self._img)
