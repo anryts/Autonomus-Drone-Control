@@ -10,6 +10,37 @@
         "isDefault": true
       },
       "problemMatcher": []
-    }
+    },
+    {
+      "label": "ros2: gazebo launch",
+      "type": "shell",
+      "command": "ros2 launch simple_ros2_app gazebo_launch.xml",
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "ros2: multi drone launch",
+      "type": "shell",
+      "command": "ros2 launch simple_ros2_app multi_drone_launch.xml",
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "problemMatcher": []
+    },
+    //TODO: fix it
+    // {
+    //   "label": "ros2: project launch",
+    //   "type": "shell",
+    //   "command": "ros2 launch simple_ros2_app project_launch.xml",
+    //   "group": {
+    //     "kind": "test",
+    //     "isDefault": false
+    //   },
+    //   "problemMatcher": []
+    // }
   ]
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <!-- Start Gazebo simulation first-->
+    <include file="$(find-pkg-share simple_ros2_app)/launch/gazebo_launch.xml"></include>
+
+    <!-- Program wait 10s, for proper binding-->
+    <timer period="10.0">
+        <include file="$(find-pkg-share simple_ros2_app)/launch/multi_drone_launch.xml"></include>
+    </timer>
+</launch>
