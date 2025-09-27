@@ -56,3 +56,5 @@ cfg/*.py
 *.pt
 
 *.zip
+
+PX4-Autopilot
