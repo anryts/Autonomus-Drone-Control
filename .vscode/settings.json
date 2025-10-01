@@ -1,0 +1,23 @@
+{
+    "ROS2.distro": "humble",
+    "python.analysis.autoImportCompletions": true,
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "*.launch": "xml",
+        "*.world": "xml",
+        "drone_detection__struct.h": "c"
+    },
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.autoComplete.extraPaths": [
+        "opt/ros/humble/lib/python3.10/site-packages",
+        "opt/ros/humble/local/lib/python3.10/dist-packages",
+        "$ROS_FOLDER/autonomous_drone_control/install/simple_ros2_app/lib/python3.10/site-packages",
+        "$ROS_FOLDER/autonomous_drone_control/install/simple_ros2_interfaces/lib/python3.10/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages",
+        "$ROS_FOLDER/autonomous_drone_control/install/simple_ros2_app/lib/python3.10/site-packages",
+        "$ROS_FOLDER/autonomous_drone_control/install/simple_ros2_interfaces/lib/python3.10/site-packages"
+    ],
+}
