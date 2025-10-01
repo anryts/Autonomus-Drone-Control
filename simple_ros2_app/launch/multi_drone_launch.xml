@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-
+   
     <!-- Drone object #1-->
     <include file="$(find-pkg-share simple_ros2_app)/launch/spawn_drone_launch.xml">
         <arg name="instance" value="0"></arg>

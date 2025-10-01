@@ -41,7 +41,6 @@ cfg/*.py
 *.mtl
 
 # IDE and editor settings
-.vscode/
 .idea/
 *.iml
 *.swp
