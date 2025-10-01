@@ -16,7 +16,7 @@ class Drone:
     def __init__(self, drone_name: str, node: Node) -> None:
         self.node = node
         self.drone_name_ = drone_name
-        self.start_flight_client_ = node.create_client(
+        self._start_flight_client = node.create_client(
             DronePosition, f"{drone_name}/companion_node/start_flight"
         )
         self.drone_reached_position_sub_ = node.create_subscription(
@@ -57,20 +57,22 @@ class Drone:
         Args:
             position (DronePosition): The target coordinates.
         """
-        if (
-            not self.start_flight_client_.wait_for_service(timeout_sec=1.0)
-            and not self.drone_is_ready
-        ):
+        if not self._start_flight_client.wait_for_service(timeout_sec=1.0):
             self.node.get_logger().info(
-                f"Waiting for {self.drone_name_}/companion_node/start_flight"
+                f"Waiting for {self.drone_name_}/companion_node/start_flight service"
             )
             return
+
+        if not self.drone_is_ready:
+            self.node.get_logger().info(f"Waiting  for {self.drone_name_} armed state")
+            return
+
         request = DronePosition.Request()
         request.x = position.x
         request.y = position.y
         request.z = position.z
         self.target_coordinates_ = position
-        future = self.start_flight_client_.call_async(request)
+        future = self._start_flight_client.call_async(request)
         future.add_done_callback(self._handle_start_flight_response)
         self.is_drone_reached_coord = False
 
