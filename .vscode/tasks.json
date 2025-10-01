@@ -31,16 +31,5 @@
       },
       "problemMatcher": []
     },
-    //TODO: fix it
-    // {
-    //   "label": "ros2: project launch",
-    //   "type": "shell",
-    //   "command": "ros2 launch simple_ros2_app project_launch.xml",
-    //   "group": {
-    //     "kind": "test",
-    //     "isDefault": false
-    //   },
-    //   "problemMatcher": []
-    // }
   ]
 }
